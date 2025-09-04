@@ -1,55 +1,51 @@
 import { Clock, UserCheck, AlertCircle, Activity } from "lucide-react";
 import { motion } from "framer-motion";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 export default function About() {
-  const services = [
-    {
-      icon: Clock,
-      title: "24 Hours Service",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      bgColor: "bg-white",
-      iconColor: "text-teal-400",
-    },
-    {
-      icon: UserCheck,
-      title: "Qualified Doctor",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      bgColor: "bg-white",
-      iconColor: "text-teal-400",
-    },
-    {
-      icon: AlertCircle,
-      title: "Emergency Care",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      bgColor: "bg-white",
-      iconColor: "text-teal-400",
-    },
-    {
-      icon: Activity,
-      title: "Operation Theater",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      bgColor: "bg-white",
-      iconColor: "text-teal-400",
-    },
-  ];
+  const fetchServices = async () => {
+    const res = await axios.get("http://localhost:5000/api/users");
+    return res.data;
+  };
+
+  const {
+    data: services,
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["cards"],
+    queryFn: fetchServices,
+  });
+
+  if (isLoading) {
+    return <p className="text-center text-gray-500">Loading Card.</p>;
+  }
+
+  if (isError) {
+    return <p className="text-center text-red-500">Failed to load Card.</p>;
+  }
+
+  const iconMap = {
+    Clock,
+    UserCheck,
+    AlertCircle,
+    Activity,
+  };
 
   return (
     <div className="flex flex-wrap gap-6 p-8 min-h-screen items-center justify-center">
-      {services.map((service, index) => {
-        const IconComponent = service.icon;
+      {services?.map((service, index) => {
+        const IconComponent = iconMap[service.icon] || Clock;
         return (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.2 }} 
+            viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6, delay: index * 0.15 }}
             whileHover={{ scale: 1.05, rotate: 1 }}
-            className={`${service.bgColor} rounded-lg shadow-md p-6 h-72 w-64 hover:shadow-lg transition-shadow duration-300  hover:bg-[#C7F2FF]`}
+            className={`${service.bgColor} rounded-lg shadow-md p-6 h-72 w-64 hover:shadow-lg transition-shadow duration-300 hover:bg-[#C7F2FF]`}
           >
             <div className="flex flex-col items-center text-center ">
               <div className="mb-4">

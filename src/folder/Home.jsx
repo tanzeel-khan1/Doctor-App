@@ -2,7 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import About from "./About";
 import ServiceArea from "./ServiceArea";
-
+import Blogs from "./Blogs"
+import Contact from "./Contact";
 const Home = () => {
   return (
     <>
@@ -86,6 +87,8 @@ const Home = () => {
     </div>
     <About/>
     <ServiceArea/>
+    <Blogs/>
+    <Contact/>
     </>
 
   );
