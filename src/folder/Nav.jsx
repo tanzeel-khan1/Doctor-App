@@ -17,7 +17,6 @@ const Nav = () => {
         </h1>
       </div>
 
-      {/* Desktop Menu */}
       <ul className="hidden md:flex gap-6 lg:gap-10 text-white font-extralight cursor-pointer mr-28">
         <li>
           <Link
@@ -61,7 +60,6 @@ const Nav = () => {
         </li>
       </ul>
 
-      {/* Mobile Toggle Button */}
       <button
         className="md:hidden text-white p-1 cursor-pointer"
         onClick={toggleMenu}
@@ -91,7 +89,6 @@ const Nav = () => {
         </svg>
       </button>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="absolute top-14 left-0 w-full bg-[#34C9B6] md:hidden shadow-lg z-50">
           <ul className="flex flex-col text-white font-extralight">

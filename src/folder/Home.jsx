@@ -4,6 +4,8 @@ import About from "./About";
 import ServiceArea from "./ServiceArea";
 import Blogs from "./Blogs"
 import Contact from "./Contact";
+import New from './New'
+import Footer from './Footer'
 const Home = () => {
   return (
     <>
@@ -89,6 +91,8 @@ const Home = () => {
     <ServiceArea/>
     <Blogs/>
     <Contact/>
+    <New/>
+    <Footer/>
     </>
 
   );
