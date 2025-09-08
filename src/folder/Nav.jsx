@@ -11,7 +11,7 @@ const Nav = () => {
   return (
     <nav className="h-14 w-full bg-[#34C9B6] flex items-center justify-between px-4 md:px-8 lg:px-16 relative">
       <div>
-        <h1 className="font-bold text-xl md:text-2xl text-[#C7F2FF] ml-28">
+        <h1 className="font-bold text-xl md:text-2xl text-[#C7F2FF] ml-24">
           Medi
           <span className="font-bold text-xl md:text-2xl text-white">site</span>
         </h1>

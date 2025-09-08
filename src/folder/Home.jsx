@@ -15,7 +15,7 @@ const Home = () => {
     >
       <div className="min-h-[30rem] w-full flex flex-col lg:flex-row px-4 sm:px-6 lg:px-0">
         <motion.div
-          className="h-full w-full lg:w-[60%] flex flex-col justify-center items-center lg:items-start lg:pl-44 pt-20 lg:pt-28"
+          className="h-full w-full lg:w-[60%] flex flex-col justify-center items-center lg:items-start lg:pl-40 pt-20 lg:pt-28"
           initial={{ opacity: 0, x: -100 }}
           
           animate={{ opacity: 1, x: 0 }}

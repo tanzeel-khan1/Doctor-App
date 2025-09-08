@@ -3,7 +3,7 @@ const Footer = () => {
   return (
     <>
       <div
-        className="relative w-full min-h-[300px] py-10 px-4 sm:px-8 lg:px-16 bg-center bg-cover"
+        className="relative w-full min-h-[300px] py-10 px-4 sm:px-8 lg:px-16 bg-center bg-cover md:bg-white bg-[#34C9B6]"
         style={{ backgroundImage: "url('footer.png')" }}
       >
         <div className="absolute inset-0 "></div>

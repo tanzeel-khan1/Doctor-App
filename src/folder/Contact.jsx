@@ -19,7 +19,10 @@ export default function ContactForm() {
     setMessage(null);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/contacts", data);
+      const response = await axios.post(
+        "http://localhost:5000/api/contacts",
+        data
+      );
 
       if (response.status === 200 || response.status === 201) {
         setMessage({
@@ -70,7 +73,9 @@ export default function ContactForm() {
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
               />
               {errors.FullName && (
-                <p className="text-red-500 text-sm mt-1">{errors.FullName.message}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.FullName.message}
+                </p>
               )}
             </div>
 
@@ -82,7 +87,9 @@ export default function ContactForm() {
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
               />
               {errors.Email && (
-                <p className="text-red-500 text-sm mt-1">{errors.Email.message}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.Email.message}
+                </p>
               )}
             </div>
           </div>
@@ -92,11 +99,15 @@ export default function ContactForm() {
               <input
                 type="tel"
                 placeholder="Phone Number"
-                {...register("PhoneNumber", { required: "Phone Number is required" })}
+                {...register("PhoneNumber", {
+                  required: "Phone Number is required",
+                })}
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
               />
               {errors.PhoneNumber && (
-                <p className="text-red-500 text-sm mt-1">{errors.PhoneNumber.message}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.PhoneNumber.message}
+                </p>
               )}
             </div>
 
@@ -104,11 +115,15 @@ export default function ContactForm() {
               <input
                 type="text"
                 placeholder="Department"
-                {...register("Department", { required: "Department is required" })}
+                {...register("Department", {
+                  required: "Department is required",
+                })}
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
               />
               {errors.Department && (
-                <p className="text-red-500 text-sm mt-1">{errors.Department.message}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.Department.message}
+                </p>
               )}
             </div>
           </div>

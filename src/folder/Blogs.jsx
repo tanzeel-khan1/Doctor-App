@@ -15,7 +15,11 @@ const fetchDoctors = async () => {
 };
 
 const ExpertTeam = () => {
-  const { data: teamMembers = [], isLoading, isError } = useQuery({
+  const {
+    data: teamMembers = [],
+    isLoading,
+    isError,
+  } = useQuery({
     queryKey: ["doctors"],
     queryFn: fetchDoctors,
   });
@@ -74,7 +78,6 @@ const ExpertTeam = () => {
     );
   }
 
-  
   if (isError) {
     return (
       <div className="flex justify-center items-center h-screen">
