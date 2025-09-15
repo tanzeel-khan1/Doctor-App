@@ -4,8 +4,7 @@ const Footer = () => {
     <>
       <div
         className="relative w-full min-h-[300px] py-10 px-4 sm:px-8 lg:px-16 bg-center bg-cover md:bg-white bg-[#34C9B6]"
-        style={{ backgroundImage: "url('footer.png')" }}
-      >
+        style={{ backgroundImage: "url('footer.png')" }}>
         <div className="absolute inset-0 "></div>
         <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center text-white">
           <div className="mb-8 md:mb-0 max-w-sm ml-0 md:ml-24  mt-0 md:mt-20">
@@ -17,7 +16,6 @@ const Footer = () => {
               When Stan Britten established BritKare in 1995, he did so with a true desire to assist the medical community with the quality care of their desire.
             </p>
           </div>
-
           <div className="mb-8 md:mb-0 mt-0 md:mt-20">
             <h3 className="font-semibold text-lg mb-2">Links</h3>
             <ul className="space-y-1 text-sm">

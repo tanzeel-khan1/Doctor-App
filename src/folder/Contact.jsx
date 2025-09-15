@@ -102,8 +102,7 @@ export default function ContactForm() {
                 {...register("PhoneNumber", {
                   required: "Phone Number is required",
                 })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
-              />
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"/>
               {errors.PhoneNumber && (
                 <p className="text-red-500 text-sm mt-1">
                   {errors.PhoneNumber.message}

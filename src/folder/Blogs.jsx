@@ -8,12 +8,10 @@ import {
   FaTwitter,
   FaLinkedinIn,
 } from "react-icons/fa";
-
 const fetchDoctors = async () => {
   const res = await axios.get("http://localhost:5000/api/doctors");
   return res.data;
 };
-
 const ExpertTeam = () => {
   const {
     data: teamMembers = [],
