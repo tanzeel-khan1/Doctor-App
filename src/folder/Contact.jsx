@@ -20,7 +20,7 @@ export default function ContactForm() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/contacts",
+        "https://doctor-web-backend-334pvq848-tanzeel0680-6266s-projects.vercel.app/api/contacts",
         data
       );
 

@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const fetchNews = async () => {
-  const res = await axios.get("http://localhost:5000/api/news");
+  const res = await axios.get("https://doctor-web-backend-334pvq848-tanzeel0680-6266s-projects.vercel.app/api/news");
   return res.data;
 };
 
