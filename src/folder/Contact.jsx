@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import { useState } from "react";
 
 export default function ContactForm() {
@@ -14,37 +13,19 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState(null);
 
-  const onSubmit = async (data) => {
+  const onSubmit = (data) => {
     setIsSubmitting(true);
     setMessage(null);
 
-    try {
-      const response = await axios.post(
-        "https://doctor-web-backend-334pvq848-tanzeel0680-6266s-projects.vercel.app/api/contacts",
-        data
-      );
-
-      if (response.status === 200 || response.status === 201) {
-        setMessage({
-          type: "success",
-          text: "✅ Form Submitted Successfully!",
-        });
-        reset();
-      } else {
-        setMessage({
-          type: "error",
-          text: "Something went wrong! Please try again.",
-        });
-      }
-    } catch (error) {
-      console.error("Submission error:", error);
+    // ✅ Fake delay (simulate API)
+    setTimeout(() => {
       setMessage({
-        type: "error",
-        text: error.response?.data?.message || "❌ Server error! Try again.",
+        type: "success",
+        text: "✅ Form Submitted Successfully (Local Demo)",
       });
-    } finally {
+      reset();
       setIsSubmitting(false);
-    }
+    }, 1000);
   };
 
   return (
@@ -102,7 +83,8 @@ export default function ContactForm() {
                 {...register("PhoneNumber", {
                   required: "Phone Number is required",
                 })}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"/>
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"
+              />
               {errors.PhoneNumber && (
                 <p className="text-red-500 text-sm mt-1">
                   {errors.PhoneNumber.message}

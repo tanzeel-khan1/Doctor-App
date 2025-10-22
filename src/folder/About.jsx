@@ -1,30 +1,41 @@
 import { Clock, UserCheck, AlertCircle, Activity } from "lucide-react";
 import { motion } from "framer-motion";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 
 export default function About() {
-  const fetchServices = async () => {
-    const res = await axios.get("https://doctor-web-backend-334pvq848-tanzeel0680-6266s-projects.vercel.app/api/users");
-    return res.data;
-  };
-
-  const {
-    data: services,
-    isLoading,
-    isError,
-  } = useQuery({
-    queryKey: ["cards"],
-    queryFn: fetchServices,
-  });
-
-  if (isLoading) {
-    return <p className="text-center text-gray-500">Loading Card.</p>;
-  }
-
-  if (isError) {
-    return <p className="text-center text-red-500">Failed to load Card.</p>;
-  }
+  const services = [
+    {
+      icon: "Clock",
+      title: "24/7 Availability",
+      description:
+        "Our team is available round the clock to provide emergency medical support whenever needed.",
+      bgColor: "bg-sky-200",
+      iconColor: "text-sky-600",
+    },
+    {
+      icon: "UserCheck",
+      title: "Qualified Doctors",
+      description:
+        "Our experienced doctors ensure personalized care and professional treatment for every patient.",
+      bgColor: "bg-teal-200",
+      iconColor: "text-teal-600",
+    },
+    {
+      icon: "AlertCircle",
+      title: "Emergency Services",
+      description:
+        "Immediate response to critical cases with advanced emergency facilities and quick action teams.",
+      bgColor: "bg-pink-200",
+      iconColor: "text-pink-600",
+    },
+    {
+      icon: "Activity",
+      title: "Advanced Equipment",
+      description:
+        "We use modern and high-precision medical equipment for accurate diagnosis and treatment.",
+      bgColor: "bg-yellow-200",
+      iconColor: "text-yellow-600",
+    },
+  ];
 
   const iconMap = {
     Clock,
@@ -35,8 +46,9 @@ export default function About() {
 
   return (
     <div className="flex flex-wrap gap-6 p-8 min-h-screen items-center justify-center">
-      {services?.map((service, index) => {
+      {services.map((service, index) => {
         const IconComponent = iconMap[service.icon] || Clock;
+
         return (
           <motion.div
             key={index}
@@ -47,7 +59,7 @@ export default function About() {
             whileHover={{ scale: 1.05, rotate: 1 }}
             className={`${service.bgColor} rounded-lg shadow-md p-6 h-72 w-64 hover:shadow-lg transition-shadow duration-300 hover:bg-[#C7F2FF]`}
           >
-            <div className="flex flex-col items-center text-center ">
+            <div className="flex flex-col items-center text-center">
               <div className="mb-4">
                 <div
                   className={`w-12 h-12 rounded-full ${

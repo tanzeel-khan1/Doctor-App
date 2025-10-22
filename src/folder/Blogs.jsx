@@ -1,26 +1,40 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import {
   FaFacebookF,
   FaGooglePlusG,
   FaTwitter,
   FaLinkedinIn,
 } from "react-icons/fa";
-const fetchDoctors = async () => {
-  const res = await axios.get("https://doctor-web-backend-334pvq848-tanzeel0680-6266s-projects.vercel.app/api/doctors");
-  return res.data;
-};
+
 const ExpertTeam = () => {
-  const {
-    data: teamMembers = [],
-    isLoading,
-    isError,
-  } = useQuery({
-    queryKey: ["doctors"],
-    queryFn: fetchDoctors,
-  });
+  // ✅ Hardcoded doctor/team data (API की जगह)
+  const teamMembers = [
+    {
+      name: "Dr. Sarah Johnson",
+      pesha: "Cardiologist",
+      image:
+        "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      name: "Dr. Michael Lee",
+      pesha: "Neurologist",
+      image:
+        "https://images.unsplash.com/photo-1606813902771-8b34e85b19b9?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      name: "Dr. Emily Smith",
+      pesha: "Pediatrician",
+      image:
+        "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      name: "Dr. James Brown",
+      pesha: "Orthopedic Surgeon",
+      image:
+        "https://images.unsplash.com/photo-1573496529574-be85d6a60704?auto=format&fit=crop&w=800&q=80",
+    },
+  ];
 
   const StarRating = () => {
     return (
@@ -68,22 +82,6 @@ const ExpertTeam = () => {
     );
   };
 
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <p className="text-lg font-semibold">Loading doctors...</p>
-      </div>
-    );
-  }
-
-  if (isError) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <p className="text-red-500 font-semibold">Failed to load doctors</p>
-      </div>
-    );
-  }
-
   return (
     <div className="max-w-6xl mx-auto px-4 py-12 min-h-screen">
       <div className="text-center mb-12">
@@ -91,12 +89,12 @@ const ExpertTeam = () => {
           Our Expert Team
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It
-          has roots in a piece of classical Latin literature from 45 BC, making
-          it over 2000 years old. Richard McClintock.
+          Meet our highly skilled and compassionate team of doctors who are
+          dedicated to providing quality healthcare with expertise and empathy.
         </p>
       </div>
 
+      {/* ✅ Team cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
         {teamMembers.map((member, index) => (
           <motion.div
