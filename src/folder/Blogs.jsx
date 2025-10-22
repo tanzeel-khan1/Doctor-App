@@ -20,7 +20,7 @@ const ExpertTeam = () => {
       name: "Dr. Michael Lee",
       pesha: "Neurologist",
       image:
-        "https://images.unsplash.com/photo-1606813902771-8b34e85b19b9?auto=format&fit=crop&w=800&q=80",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVXRMrZHp2Vv7XePQtwJZrf0FmbXoUWw53iQ&s",
     },
     {
       name: "Dr. Emily Smith",

@@ -16,7 +16,7 @@ export default function About() {
       title: "Qualified Doctors",
       description:
         "Our experienced doctors ensure personalized care and professional treatment for every patient.",
-      bgColor: "bg-teal-200",
+      bgColor: "bg-sky-200",
       iconColor: "text-teal-600",
     },
     {
@@ -24,7 +24,7 @@ export default function About() {
       title: "Emergency Services",
       description:
         "Immediate response to critical cases with advanced emergency facilities and quick action teams.",
-      bgColor: "bg-pink-200",
+      bgColor: "bg-sky-200",
       iconColor: "text-pink-600",
     },
     {
@@ -32,7 +32,7 @@ export default function About() {
       title: "Advanced Equipment",
       description:
         "We use modern and high-precision medical equipment for accurate diagnosis and treatment.",
-      bgColor: "bg-yellow-200",
+      bgColor: "bg-sky-200",
       iconColor: "text-yellow-600",
     },
   ];
